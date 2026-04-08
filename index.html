@@ -139,25 +139,41 @@ h1.nocount:before, h2.nocount:before, h3.nocount:before, h4.nocount:before, h5.n
 .wrapper {
   position: relative;
   margin: auto;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  
-  width: 87.7%;   
-  height: 150px;
-  
-  background: hsl(0,0%,95%);
-  box-shadow: 1px 1px 25px 3px rgba(0,0,0,.3); 
+  width: min(92vw, 850px);
+
+   
+  height: clamp(150px, 28vw, 300px);
+
+  background:
+     
+    linear-gradient(
+      100deg,
+      hsla(0, 0%, 95%, 0.86) 0%,
+      hsla(0, 0%, 95%, 0.50) 35%,
+      hsla(0, 0%, 95%, 0.25) 60%,
+      hsla(0, 0%, 95%, 0.115) 100%
+    ),
+     
+    url(https://imgs.duoyu.ren/base/diary_img_02.232gdjc8bv.jpg) center center / cover no-repeat;
+
+  box-shadow: 1px 1px 25px 3px rgba(0,0,0,.3);
+  overflow: hidden;
+  border-radius: 12px;  
 }
+
+ 
+.header,
+.content,
+.cardstatis {
+  position: absolute;
+  z-index: 1;
+}
+
  
 .header{
-  position: absolute;
   width: max-content;
   font-size: 1.875rem;
-
   white-space: nowrap;
-  
   top: 18%;
   left: 5%;
 }
@@ -168,42 +184,42 @@ h1.nocount:before, h2.nocount:before, h3.nocount:before, h4.nocount:before, h5.n
   left: 0;
   width: 100%;
   height: 5%;
-  
   background: black;
 }
 
-
- 
 .content {
-  position: absolute;
   font-size: 1.525rem;
   width: 40%;
-  
   top: 30%;
   left: 5%;
 }
 .cardstatis {
-  position: absolute;
   font-size: 1rem;
   width: 40%;
-  
   top: 50%;
   left: 5%;
 }
 
-.mainimage {
-  position: absolute;
-  top: 0;
-  right: 0;
+ 
+@media (max-width: 768px) {
+  .wrapper {
+    height: clamp(220px, 52vw, 420px);
+    background:
+      linear-gradient(
+        120deg,
+        hsla(0, 0%, 95%, 0.96) 0%,
+        hsla(0, 0%, 95%, 0.88) 45%,
+        hsla(0, 0%, 95%, 0.25) 100%
+      ),
+      url(https://imgs.duoyu.ren/base/diary_img_01.99txqv3rtz.jpg) center center / cover no-repeat;
+  }
 
-  width: 55%;
-  height: 100%;
-  background-image: url(https://imgs.duoyu.ren/base/diary-img.1ycbax16ibuo.webp);
-  clip-path: polygon(45% 0%, 100% 0, 100% 100%, 0% 100%); 
-  
-  background-repeat: no-repeat;
-  background-size: cover;
+  .content,
+  .cardstatis {
+    width: 70%;
+  }
 }
+
 </style>
 
 
@@ -213,7 +229,6 @@ h1.nocount:before, h2.nocount:before, h3.nocount:before, h4.nocount:before, h5.n
     <div class="cardstatis">
     <div class="value"><span id="busuanzi_container_site_uv"><i class="fa-solid fa-users"></i> <strong><a href="https://duoyu.ren/"><span id="busuanzi_site_uv"></span></a></strong></span><br><span id="busuanzi_container_site_pv"><i class="fa-solid fa-eye"></i> <a href="https://info.flagcounter.com/SonU"><strong><span id="busuanzi_site_pv"></span></strong></a></span></div>
     </div>
-    <div class="mainimage"></div>
 </div>
 
 <div class="mainbody">
